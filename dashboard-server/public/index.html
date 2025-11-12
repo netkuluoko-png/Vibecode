@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#1a1a1a">
+    <title>💡 LightTracker - Моніторинг світла</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75'>💡</text></svg>">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>💡 LightTracker</h1>
+            <p class="subtitle">Моніторинг електроенергії</p>
+        </header>
+
+        <!-- Current Status Card -->
+        <div class="card status-card" id="statusCard">
+            <div class="status-indicator" id="statusIndicator">
+                <div class="status-icon" id="statusIcon">🔌</div>
+                <div class="status-text">
+                    <h2 id="statusTitle">Завантаження...</h2>
+                    <p id="statusSubtitle">Очікування даних</p>
+                </div>
+            </div>
+            <div class="last-update" id="lastUpdate">
+                Останнє оновлення: -
+            </div>
+        </div>
+
+        <!-- Quick Stats -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon">📊</div>
+                <div class="stat-value" id="totalOutages">-</div>
+                <div class="stat-label">Всього відключень</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">⏱️</div>
+                <div class="stat-value" id="avgDuration">-</div>
+                <div class="stat-label">Середня тривалість</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">⚠️</div>
+                <div class="stat-value" id="todayOutages">-</div>
+                <div class="stat-label">Сьогодні</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">🕐</div>
+                <div class="stat-value" id="totalHours">-</div>
+                <div class="stat-label">Всього годин без світла</div>
+            </div>
+        </div>
+
+        <!-- Current Outage Alert -->
+        <div class="alert alert-warning" id="currentOutageAlert" style="display: none;">
+            <div class="alert-icon">⚠️</div>
+            <div class="alert-content">
+                <strong>Поточне відключення</strong>
+                <p id="currentOutageText">-</p>
+            </div>
+        </div>
+
+        <!-- Recent Outages -->
+        <div class="card">
+            <h3 class="card-title">📋 Останні відключення</h3>
+            <div class="outages-list" id="outagesList">
+                <div class="loading">Завантаження...</div>
+            </div>
+        </div>
+
+        <!-- Daily Stats Chart -->
+        <div class="card">
+            <h3 class="card-title">📈 Статистика по днях (30 днів)</h3>
+            <div class="chart-container" id="chartContainer">
+                <div class="loading">Завантаження...</div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Зроблено з 🔦 в Україні</p>
+            <p class="footer-small">LightTracker v1.0</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
